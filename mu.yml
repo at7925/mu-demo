@@ -1,0 +1,13 @@
+namespace: mu4at
+environments:
+- name: acceptance
+- name: production
+service:
+  port: 80
+  healthEndpoint: /
+  pathPatterns:
+  - /*
+  pipeline:
+    source:
+      provider: GitHub
+      repo: at7925/mu-demo
