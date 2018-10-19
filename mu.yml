@@ -1,13 +1,10 @@
-namespace: mu4at
-environments:
-- name: acceptance
-- name: production
+---
 service:
+  desiredCount: 2
+  maxSize: 4
   port: 80
-  healthEndpoint: /
   pathPatterns:
   - /*
-  pipeline:
-    source:
-      provider: GitHub
-      repo: at7925/mu-demo
+  discoveryTTL: 5
+  environment:
+    VAR1: "value1"
